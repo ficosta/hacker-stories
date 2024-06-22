@@ -22,7 +22,7 @@ const list = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
     <div>
       <h1>Hello {welcome.greeting}</h1>
@@ -31,19 +31,23 @@ function App() {
       <List />
     </div>
   );
-}
-function Search() {
+};
+const Search = () => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event);
+    console.log(event.target.value);
+  };
   return (
     <div>
       <label htmlFor="search">Search:</label>
-      <input id="search" type="text" />
+      <input id="search" type="text" onChange={handleChange} />
     </div>
   );
-}
-function List() {
+};
+const List = () => {
   return (
     <ul>
-      {list.map(function (item) {
+      {list.map((item) => {
         return (
           <li key={item.objectID}>
             <a href={item.url}>{item.title}</a>
@@ -55,6 +59,6 @@ function List() {
       })}
     </ul>
   );
-}
+};
 
 export default App;
