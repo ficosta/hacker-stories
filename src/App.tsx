@@ -1,7 +1,16 @@
 import "./App.css";
-const title = "React";
+const welcome = {
+  greeting: "Hey",
+  title: "React",
+};
 function App() {
-  return <h1>Hello {title}</h1>;
+  return (
+    <div>
+      <h1>Hello {welcome.greeting}</h1>
+      <label htmlFor="search">Search:</label>
+      <input id="search" type="text" />
+    </div>
+  );
 }
 
 export default App;
